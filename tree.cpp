@@ -22,7 +22,7 @@ void  Tree::printTree(ofstream& f) {
 	list <Node*> ::iterator it;
 	int i = 0;
 
-	cout << "<?xml version = '1.0' encoding='UTF-8 standalone='yes'?>\n";
+	f << "<?xml version = '1.0' encoding='UTF-8 standalone='yes'?>\n";
 	f << "<RootElement>\n";
 	for (it = elements.begin(); it != elements.end(); it++) {
 		(*it)->printChildren(f, 2);
