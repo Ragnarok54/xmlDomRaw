@@ -8,7 +8,7 @@ int main()
 	Node* p, * x, * y, * z,* newElement, *source, *destination;
 	int input, option, nodeOption, noAttributes, nodeLocation, answer;
 	string name, content, value, attribute;
-	ofstream g("out.xml",'w');
+	ofstream g;
 
 	//Menu
 	cout << "Select one of the following:\n1. Demonstration\n2. Input by hand\n3. Exit\n";
@@ -83,7 +83,9 @@ int main()
 		cout << "The DOM after the operation:\n\n";
 		cout << "//////////////////////////////////////////////////////\n";
 		tree.displayTree();
+		g.open("out.xml");
 		tree.printTree(g);
+		g.close();
 		cout << "//////////////////////////////////////////////////////\n";
 		// Comment this line for normal functions. 
 		// Or keep it to have fun with the DOM
@@ -278,8 +280,10 @@ int main()
 
 			//Print DOM to file
 			case 6:
+				g.open("out.xml");
 				tree.printTree(g);
 				cout << "You can find the DOM in the out.xml file\n";
+				g.close();
 				break;
 
 			//Exit
